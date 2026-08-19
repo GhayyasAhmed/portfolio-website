@@ -10,7 +10,7 @@ export function Skills() {
       <Container>
         <SectionHeading kicker="Skills" title="Tools I reach for." />
 
-        <div className="mt-12 grid gap-8 sm:grid-cols-3">
+        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {SKILLS.map((group, index) => (
             <Reveal key={group.category} delay={index * 80}>
               <div>

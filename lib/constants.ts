@@ -44,11 +44,12 @@ export type SocialLink = {
  * any entry whose `href` is empty, so nothing fake ever renders.
  */
 export const SOCIAL_LINKS: SocialLink[] = [
-  { label: "GitHub", href: "" },
-  { label: "LinkedIn", href: "" },
+  { label: "GitHub", href: "https://github.com/GhayyasAhmed" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/ghayyas-ahmed/" },
 ];
 
 /** TODO: add a real contact email. Left empty on purpose — see SOCIAL_LINKS. */
-export const CONTACT_EMAIL = "";
+export const CONTACT_EMAIL = "ghayyas1ahmed@gmail.com";
+export const WHATSAPP_LINK = "https://wa.me/+923700713489";
 
 export const RESUME_PATH = "/resume.pdf";

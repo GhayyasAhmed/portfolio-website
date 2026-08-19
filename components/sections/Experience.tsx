@@ -9,8 +9,11 @@ export function Experience() {
   return (
     <section id="experience" className="scroll-mt-16 py-24">
       <Container>
-        <SectionHeading kicker="Experience" title="Where I've worked." />
-
+         <SectionHeading
+          kicker="Experience"
+          title="Where I've worked."
+          description="Professional roles only — full-stack project work from the DevWeekends Fellowship is showcased in Projects below."
+        />
         <ol className="mt-12 space-y-6 border-l border-border pl-8">
           {EXPERIENCE.map((entry, index) => (
             <Reveal key={entry.id} delay={index * 80}>

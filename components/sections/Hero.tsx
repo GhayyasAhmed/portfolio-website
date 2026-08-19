@@ -26,10 +26,10 @@ export function Hero() {
 
         <p
           style={{ animationDelay: "160ms" }}
-          className="animate-fade-up mt-6 max-w-xl text-base text-muted sm:text-lg"
+          className="animate-fade-up mt-6 max-w-xl text-base text-muted sm:text-lg text-justify"
         >
           ~4 years building production React interfaces, now shipping complete full-stack
-          applications — from database to deploy — through the DevWeekends Fellowship.
+          applications from database to deploy through the DevWeekends Fellowship.
         </p>
 
         <div
@@ -40,15 +40,16 @@ export function Hero() {
             View Projects
             <ArrowRight className="size-4" aria-hidden="true" />
           </ButtonLink>
-          <ButtonLink href="#contact" variant="secondary">
-            Get in Touch
-          </ButtonLink>
           {hasResume ? (
-            <ButtonLink href={RESUME_PATH} variant="ghost" target="_blank">
+            <ButtonLink href={RESUME_PATH} variant="secondary" target="_blank">
               <FileDown className="size-4" aria-hidden="true" />
-              Resume
+              Download Resume
             </ButtonLink>
-          ) : null}
+          ) : (
+            <ButtonLink href="#contact" variant="secondary">
+              Get in Touch
+            </ButtonLink>
+          )}
         </div>
       </Container>
     </section>
