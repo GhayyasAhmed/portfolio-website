@@ -1,0 +1,56 @@
+import { ArrowRight, FileDown } from "lucide-react";
+import { Container } from "@/components/ui/Container";
+import { ButtonLink } from "@/components/ui/ButtonLink";
+import { SITE_NAME, RESUME_PATH } from "@/lib/constants";
+import { hasResumeFile } from "@/lib/Resume";
+
+export function Hero() {
+  const hasResume = hasResumeFile();
+
+  return (
+    <section className="relative overflow-hidden bg-grid-fade">
+      <Container className="flex min-h-[calc(100svh-4rem)] flex-col justify-center py-24">
+        <p
+          style={{ animationDelay: "0ms" }}
+          className="animate-fade-up font-mono text-sm font-medium tracking-wide text-accent"
+        >
+          Hi, I&apos;m {SITE_NAME}
+        </p>
+
+        <h1
+          style={{ animationDelay: "80ms" }}
+          className="animate-fade-up mt-4 max-w-3xl text-4xl font-semibold text-foreground sm:text-5xl md:text-6xl"
+        >
+          Frontend engineer building full-stack products.
+        </h1>
+
+        <p
+          style={{ animationDelay: "160ms" }}
+          className="animate-fade-up mt-6 max-w-xl text-base text-muted sm:text-lg"
+        >
+          ~4 years building production React interfaces, now shipping complete full-stack
+          applications — from database to deploy — through the DevWeekends Fellowship.
+        </p>
+
+        <div
+          style={{ animationDelay: "240ms" }}
+          className="animate-fade-up mt-10 flex flex-wrap items-center gap-4"
+        >
+          <ButtonLink href="#projects" variant="primary">
+            View Projects
+            <ArrowRight className="size-4" aria-hidden="true" />
+          </ButtonLink>
+          <ButtonLink href="#contact" variant="secondary">
+            Get in Touch
+          </ButtonLink>
+          {hasResume ? (
+            <ButtonLink href={RESUME_PATH} variant="ghost" target="_blank">
+              <FileDown className="size-4" aria-hidden="true" />
+              Resume
+            </ButtonLink>
+          ) : null}
+        </div>
+      </Container>
+    </section>
+  );
+}
