@@ -6,7 +6,7 @@ import { PROJECTS } from "@/data/projects";
 
 export function Projects() {
   return (
-    <section id="projects" aria-labelledby="projects-heading" className="scroll-mt-16 py-24">
+    <section id="projects" aria-labelledby="projects-heading" className="scroll-mt-16 py-16">
       <Container>
         <SectionHeading
         headingId="projects-heading"

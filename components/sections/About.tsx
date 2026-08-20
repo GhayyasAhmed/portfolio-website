@@ -23,7 +23,7 @@ const PILLARS = [
 
 export function About() {
   return (
-    <section id="about" aria-labelledby="about-heading"  className="scroll-mt-16 py-24">
+    <section id="about" aria-labelledby="about-heading"  className="scroll-mt-16 py-2">
       <Container>
         <SectionHeading
           headingId="about-heading"

@@ -8,7 +8,7 @@ export function Footer() {
 
   return (
     <footer className="border-t border-border">
-      <Container className="flex flex-col gap-6 py-10 sm:flex-row sm:items-center sm:justify-between">
+      <Container className="flex flex-col gap-6 py-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           {/* <p className="font-display text-sm font-semibold text-foreground">{SITE_NAME}</p> */}
           <p className="mt-1 text-sm text-muted">

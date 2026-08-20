@@ -10,7 +10,7 @@ export function Experience() {
     <section
       id="experience"
       aria-labelledby="experience-heading"
-      className="scroll-mt-16 py-24"
+      className="scroll-mt-16 py-16"
     >
       <Container>
         <SectionHeading
@@ -44,7 +44,7 @@ export function Experience() {
                   {entry.organization}
                 </p>
                 <p className="text-sm text-muted">{entry.period}</p>
-                <p className="mt-3 text-sm leading-relaxed text-muted">
+                <p className="mt-3 text-sm leading-relaxed text-muted text-justify">
                   {entry.summary}
                 </p>
               </li>

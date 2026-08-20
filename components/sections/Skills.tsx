@@ -9,7 +9,7 @@ export function Skills() {
     <section
       id="skills"
       aria-labelledby="skills-heading"
-      className="scroll-mt-16 py-24"
+      className="scroll-mt-16 py-16"
     >
       <Container>
         <SectionHeading

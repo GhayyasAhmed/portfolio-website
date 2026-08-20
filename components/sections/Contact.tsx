@@ -31,7 +31,7 @@ export function Contact() {
     <section
       id="contact"
       aria-labelledby="contact-heading"
-      className="scroll-mt-16 py-24"
+      className="scroll-mt-16 py-12"
     >
       <Container className="text-center">
         <SectionHeading

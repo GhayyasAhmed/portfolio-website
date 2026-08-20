@@ -29,8 +29,7 @@ export function Hero() {
           style={{ animationDelay: "160ms" }}
           className="animate-fade-up mt-6 max-w-xl text-base text-muted sm:text-lg text-justify"
         >
-          4 years building production React interfaces, now shipping complete
-          fullstack web applications from database to deploy.
+          Specializing in resilient React frontends for 4 years, now extending that precision across the entire stack to build and deploy complete full stack web applications.
         </p>
 
         <div
