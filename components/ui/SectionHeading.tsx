@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 
 type SectionHeadingProps = {
   kicker?: string;
-  title: string;
+  title?: string;
   description?: string;
   align?: "left" | "center";
   className?: string;
@@ -20,8 +20,12 @@ export function SectionHeading({
       {kicker ? (
         <p className="font-mono text-sm font-medium tracking-wide text-accent">{kicker}</p>
       ) : null}
-      <h2 className="mt-2 text-3xl font-semibold text-foreground sm:text-4xl">{title}</h2>
-      {description ? <p className="mt-4 text-base text-muted sm:text-lg">{description}</p> : null}
+      {
+        title ?
+        <h2 className="mt-2 text-3xl font-semibold text-foreground sm:text-4xl">{title}</h2>
+      : null
+      }
+      {description ? <p className="mt-2 text-base text-muted sm:text-lg">{description}</p> : null}
     </div>
   );
 }

@@ -36,12 +36,12 @@ export function Hero() {
           style={{ animationDelay: "240ms" }}
           className="animate-fade-up mt-10 flex flex-wrap items-center gap-4"
         >
-          <ButtonLink href="#projects" variant="primary">
+          <ButtonLink href="#projects" variant="secondary">
             View Projects
             <ArrowRight className="size-4" aria-hidden="true" />
           </ButtonLink>
           {hasResume ? (
-            <ButtonLink href={RESUME_PATH} variant="secondary" target="_blank">
+            <ButtonLink href={RESUME_PATH} variant="primary" target="_blank">
               <FileDown className="size-4" aria-hidden="true" />
               Download Resume
             </ButtonLink>

@@ -8,9 +8,11 @@ export function Skills() {
   return (
     <section id="skills" className="scroll-mt-16 py-24">
       <Container>
-        <SectionHeading kicker="Skills" title="Tools I reach for." />
+        <SectionHeading kicker="Skills" 
+        // title="Tools I reach for." 
+        />
 
-        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {SKILLS.map((group, index) => (
             <Reveal key={group.category} delay={index * 80}>
               <div>

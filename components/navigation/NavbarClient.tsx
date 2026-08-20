@@ -86,7 +86,7 @@ export function NavbarClient({ hasResume }: NavbarClientProps) {
         </nav>
 
         <div className="hidden items-center gap-3 md:flex">
-          {hasResume ? (
+          {/* {hasResume ? (
             <a
               href={RESUME_PATH}
               target="_blank"
@@ -96,7 +96,7 @@ export function NavbarClient({ hasResume }: NavbarClientProps) {
               <FileDown className="size-4" aria-hidden="true" />
               Resume
             </a>
-          ) : null}
+          ) : null} */}
           <ThemeToggle />
         </div>
 
@@ -131,7 +131,7 @@ export function NavbarClient({ hasResume }: NavbarClientProps) {
                 </a>
               </li>
             ))}
-            {hasResume ? (
+            {/* {hasResume ? (
               <li>
                 <a
                   href={RESUME_PATH}
@@ -143,7 +143,7 @@ export function NavbarClient({ hasResume }: NavbarClientProps) {
                   Resume
                 </a>
               </li>
-            ) : null}
+            ) : null} */}
           </ul>
         </nav>
       ) : null}

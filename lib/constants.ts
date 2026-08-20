@@ -52,4 +52,4 @@ export const SOCIAL_LINKS: SocialLink[] = [
 export const CONTACT_EMAIL = "ghayyas1ahmed@gmail.com";
 export const WHATSAPP_LINK = "https://wa.me/+923700713489";
 
-export const RESUME_PATH = "/resume.pdf";
+export const RESUME_PATH = "/Ghayyas_Ahmed_FullStack_Developer.pdf";
