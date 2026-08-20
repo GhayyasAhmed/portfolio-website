@@ -20,18 +20,17 @@ export function Hero() {
 
         <h1
           style={{ animationDelay: "80ms" }}
-          className="animate-fade-up mt-4 max-w-3xl text-4xl font-semibold text-foreground sm:text-5xl md:text-6xl"
+          className="animate-fade-up mt-4 max-w-3xl text-4xl font-semibold text-foreground sm:text-5xl md:text-5xl"
         >
-          Frontend engineer building full-stack products.
+          Building fullstack products
         </h1>
 
         <p
           style={{ animationDelay: "160ms" }}
           className="animate-fade-up mt-6 max-w-xl text-base text-muted sm:text-lg text-justify"
         >
-          ~4 years building production React interfaces, now shipping complete
-          full-stack applications from database to deploy through the
-          DevWeekends Fellowship.
+          4 years building production React interfaces, now shipping complete
+          fullstack web applications from database to deploy.
         </p>
 
         <div

@@ -1,147 +1,165 @@
 export type TechStackGroup = {
-  /** e.g. "Frontend", "Backend & Realtime" */
   category: string;
   items: string[];
 };
 
 export type Project = {
-  /** Matches the folder segment under app/projects/[slug] */
   slug: string;
   title: string;
   tagline: string;
-  /** Short description used on the homepage project card. */
   summary: string;
-  /** Longer description used in the detail page's Overview section. */
   overview: string;
   keyFeatures: string[];
   engineeringHighlights: string[];
   techStack: TechStackGroup[];
   imageUrl?: string;
   deployment: string;
-  /**
-   * Live deployment / GitHub repository URLs.
-   * `null` means the link isn't available yet — never a fabricated URL.
-   * Cards and detail pages render an honest "coming soon" state instead
-   * (see components/projects/ProjectLinkButton.tsx).
-   */
   liveDemoUrl: string | null;
   githubUrl: string | null;
-  /** Unique per-project SEO description — kept distinct from tagline/summary. */
   metaDescription: string;
 };
 
-/**
- * Full-stack projects built during the DevWeekends Fellowship.
- *
- * Order here drives both the homepage grid and the sitemap: Multi-Vendor
- * E-Commerce, then LMS, then Hotel Booking.
- *
- * Content reflects only verified capabilities. Real product screenshots and
- * live demo / GitHub URLs aren't available yet, so those stay `null` /
- * placeholder rather than invented.
- */
 export const PROJECTS: Project[] = [
   {
     slug: "multi-vendor-ecommerce",
     title: "Multi-Vendor E-Commerce Platform",
-    tagline: "Marketplace supporting multiple independent sellers.",
+    tagline: "Full-stack marketplace with role-based workflows and real-time updates.",
     summary:
-      "A full-stack marketplace where independent vendors manage their own storefronts, with real-time order updates and a containerized deployment.",
+      "A production oriented marketplace where independent vendors manage products and orders, supported by role-based access, real-time communication, and an automated deployment pipeline.",
     overview:
-      "A full-stack marketplace that lets multiple independent vendors list products, manage inventory, and fulfill orders under one platform. The core of the build is the application layer: role-based authentication and authorization across buyers, vendors, and admins, a REST API architecture to support each role, and Socket.IO-driven real-time updates for order status and notifications. The app also ships with a containerized deployment pipeline — Docker, Nginx, GitHub Actions, and AWS EC2 — built to get the product running end to end in a production-like environment; that infrastructure work supports the application rather than being the focus of it.",
+      "A full-stack multi-vendor marketplace where buyers, vendors, and administrators interact through distinct role-based workflows. The application combines a React frontend with a Node.js/Express API, authentication and authorization, Socket.IO-based real-time communication, and Stripe-powered payments. The project was also taken through a production-oriented deployment workflow using Docker, Nginx, AWS EC2, and GitHub Actions CI/CD.",
     keyFeatures: [
-      "Multi-vendor storefronts — vendors manage their own product listings, inventory, and orders independently.",
-      "Role-based authentication and authorization for buyers, vendors, and admins.",
-      "Real-time order and notification updates via Socket.IO.",
-      "REST API layer supporting the catalog, cart, checkout, and order flow.",
+      "Multi-vendor storefronts with independent product and order management.",
+      "Role-based authentication and authorization for buyers, vendors, and administrators.",
+      "Real-time order and notification updates using Socket.IO.",
+      "REST API architecture supporting catalog, cart, checkout, and order workflows.",
+      "Stripe payment integration.",
     ],
     engineeringHighlights: [
-      "Designed the backend and API architecture around distinct vendor, buyer, and admin roles.",
-      "Implemented real-time communication with Socket.IO for order and status updates.",
-      "Applied security practices around authentication, authorization, and API access control.",
-      "Containerized the app with Docker and deployed it to AWS EC2 behind Nginx.",
-      "Set up a GitHub Actions CI/CD pipeline to automate build and deployment.",
+      "Designed frontend workflows around distinct buyer, vendor, and administrator roles.",
+      "Implemented authentication, authorization, and role-based access control across the application.",
+      "Integrated Socket.IO for real-time order and status communication.",
+      "Built and integrated REST APIs for the application's core business workflows.",
+      "Containerized the application with Docker and deployed it to AWS EC2 behind Nginx.",
+      "Automated deployment through GitHub Actions CI/CD.",
+      "Applied security considerations across authentication, authorization, API access, and deployment.",
     ],
     techStack: [
-      { category: "Frontend", items: ["React", "TypeScript", "Tailwind CSS"] },
-      { category: "Backend & Realtime", items: ["Node.js", "Express", "REST APIs", "Socket.IO"] },
       {
-        category: "Infrastructure & Deployment",
-        items: ["Docker", "AWS EC2", "Nginx", "GitHub Actions CI/CD"],
+        category: "Frontend",
+        items: ["React", "TypeScript", "Tailwind CSS"],
+      },
+      {
+        category: "Backend & Realtime",
+        items: ["Node.js", "Express", "REST APIs", "Socket.IO"],
+      },
+      {
+        category: "Payments",
+        items: ["Stripe"],
+      },
+      {
+        category: "Deployment",
+        items: ["Docker", "AWS EC2", "Nginx", "GitHub Actions"],
       },
     ],
     imageUrl: "/multi_vendor_ecommerce_app.webp",
     deployment:
-      "Deployed to an AWS EC2 instance behind Nginx as a reverse proxy, with the app containerized using Docker for consistent environments. A GitHub Actions pipeline builds and deploys on push. This setup exists to get the product running end to end in production — the engineering focus of the project is the application and API layer, with infrastructure as supporting evidence of shipping it.",
+      "Deployed using Docker on AWS EC2 behind Nginx, with GitHub Actions handling the CI/CD workflow. The infrastructure demonstrates the ability to take a full-stack application beyond local development and deploy it through an automated production-oriented workflow.",
     liveDemoUrl: "https://mercovia.vercel.app",
     githubUrl: "https://github.com/GhayyasAhmed/mern-multi-vendor-ecommerce",
     metaDescription:
-      "Case study: a full-stack multi-vendor e-commerce marketplace with role-based auth, real-time Socket.IO updates, and a Dockerized AWS deployment.",
+      "Full-stack multi-vendor e-commerce platform built with React, TypeScript, Node.js, Socket.IO, Stripe, Docker, AWS EC2, and GitHub Actions.",
   },
+
   {
     slug: "learning-management-system",
     title: "Learning Management System",
-    tagline: "Platform for courses, enrollment, and progress tracking.",
+    tagline: "Course platform with role-based access, payments, and SEO-focused pages.",
     summary:
-      "A course platform built with Next.js and TypeScript, with role-based access, Stripe-powered enrollment, and SEO-minded course pages.",
+      "A Next.js and TypeScript learning platform for course management and enrollment, with role-based access, social authentication, Stripe payments, SEO, and performance considerations.",
     overview:
-      "A learning management system for creating, publishing, and enrolling in courses, built with Next.js and TypeScript. Access is role-based: instructors manage course content while students enroll and track their progress, with authentication supporting social sign-in alongside standard email/password login. Paid enrollment runs through Stripe. Because course and catalog pages are meant to be found and read quickly, the build paid close attention to SEO fundamentals and page performance, leaning on Next.js's rendering model to keep both fast.",
+      "A learning management system built with Next.js and TypeScript for instructors and students. Instructors can manage course content while students can discover, enroll in, and track courses. The application includes authentication and social authentication, role-based access, Stripe-powered payments, and SEO-focused course and catalog pages.",
     keyFeatures: [
       "Course creation and management for instructors.",
       "Student enrollment and progress tracking.",
-      "Role-based access separating instructor and student permissions.",
-      "Authentication with support for social sign-in.",
-      "Paid course enrollment via Stripe.",
+      "Role-based access separating instructor and student capabilities.",
+      "Email/password and social authentication.",
+      "Stripe-powered course payments.",
+      "SEO-focused course and catalog pages.",
     ],
     engineeringHighlights: [
-      "Built on Next.js and TypeScript, using the framework's rendering model for fast, SEO-friendly course pages.",
-      "Implemented role-based access control to separate instructor and student capabilities.",
-      "Integrated Stripe for course payments and enrollment.",
-      "Structured pages and metadata with SEO in mind for course discoverability.",
-      "Kept performance in view across course and catalog pages.",
+      "Built the frontend with Next.js and TypeScript.",
+      "Implemented role-based access control for instructor and student workflows.",
+      "Integrated social authentication alongside standard authentication.",
+      "Integrated Stripe for paid course enrollment.",
+      "Structured pages and metadata with SEO and discoverability in mind.",
+      "Optimized the application with a focus on performance and efficient rendering.",
     ],
     techStack: [
-      { category: "Frontend", items: ["Next.js", "TypeScript", "Tailwind CSS"] },
-      { category: "Backend & Data", items: ["Node.js", "REST APIs"] },
-      { category: "Auth & Payments", items: ["Authentication", "Social Authentication", "Stripe"] },
+      {
+        category: "Frontend",
+        items: ["Next.js", "TypeScript", "Tailwind CSS"],
+      },
+      {
+        category: "Backend & API",
+        items: ["Node.js", "REST APIs"],
+      },
+      {
+        category: "Authentication",
+        items: ["Authentication", "Social Authentication", "RBAC"],
+      },
+      {
+        category: "Payments",
+        items: ["Stripe"],
+      },
     ],
     imageUrl: "/learning_management_system.webp",
     deployment:
-      "Deployed on Vercel, which pairs naturally with the Next.js framework this project is built on — builds and previews ship automatically on push, and course pages are served from Vercel's edge network to keep load times low.",
+      "Deployed on Vercel with automated builds and deployments. The project uses Next.js's rendering capabilities to support fast, SEO-friendly application pages.",
     liveDemoUrl: "https://lms-lac-three.vercel.app",
     githubUrl: "https://github.com/GhayyasAhmed/learning-management-system",
     metaDescription:
-      "Case study: a Next.js and TypeScript learning management system with role-based access, Stripe-powered enrollment, and SEO-focused course pages.",
+      "Next.js and TypeScript learning management system with role-based access, social authentication, Stripe payments, SEO, and performance optimization.",
   },
+
   {
     slug: "hotel-booking-system",
     title: "Hotel Booking System",
-    tagline: "End-to-end booking flow with availability and reservations.",
+    tagline: "Full-stack hotel reservation application.",
     summary:
-      "A full-stack booking application covering property browsing, availability search, and the reservation flow end to end.",
+      "A full-stack hotel booking application covering property discovery, availability search, and the reservation workflow.",
     overview:
-      "A full-stack hotel booking application covering the core reservation flow: browsing available properties, checking availability, and completing a booking. It's built on the same React/TypeScript foundation used across these projects, with a Node.js/Express API handling availability and reservation logic.",
+      "A full-stack hotel booking application developed as part of the DevWeekends Fellowship. The project covers the core hotel reservation experience, including browsing properties, searching availability, selecting accommodation, and completing bookings.",
     keyFeatures: [
-      "Property and room browsing.",
-      "Availability search by date.",
-      "End-to-end reservation flow, from selection through booking confirmation.",
+      "Hotel and room browsing.",
+      "Availability search based on booking dates.",
+      "Room selection and reservation workflow.",
+      "Booking confirmation flow.",
     ],
     engineeringHighlights: [
-      "Implemented the end-to-end booking flow, from availability search through reservation confirmation.",
-      "Built the API layer in Node.js/Express to handle availability and booking logic.",
-      "Used the same React, TypeScript, and Tailwind CSS foundation as the other Fellowship projects.",
+      "Built the application using React and TypeScript.",
+      "Implemented the end-to-end hotel reservation workflow.",
+      "Integrated the frontend with a Node.js and Express backend API.",
+      "Handled availability and booking-related application flows.",
     ],
     techStack: [
-      { category: "Frontend", items: ["React", "TypeScript", "Tailwind CSS"] },
-      { category: "Backend", items: ["Node.js", "Express", "REST APIs"] },
+      {
+        category: "Frontend",
+        items: ["React", "TypeScript", "Tailwind CSS"],
+      },
+      {
+        category: "Backend & API",
+        items: ["Node.js", "Express", "REST APIs"],
+      },
     ],
     imageUrl: "/hotel_booking_system.webp",
-    deployment: "Deployed on Vercel, in line with the other projects in this portfolio.",
+    deployment:
+      "Deployed on Vercel with separate frontend and backend application components.",
     liveDemoUrl: "https://hotel-booking-system-frontend-seven.vercel.app",
     githubUrl: "https://github.com/GhayyasAhmed/hotel-booking-system",
     metaDescription:
-      "Case study: a full-stack hotel booking application covering property browsing, availability search, and the end-to-end reservation flow.",
-  },
+      "Full-stack hotel booking application built with React, TypeScript, Node.js, and Express, covering availability and reservation workflows.",
+  }
 ];
 
 export function getProjectBySlug(slug: string): Project | undefined {

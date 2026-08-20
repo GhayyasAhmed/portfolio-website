@@ -30,6 +30,16 @@ export function Footer() {
 
         {(visibleSocialLinks.length > 0 || CONTACT_EMAIL) && (
           <div className="flex flex-wrap gap-x-6 gap-y-2">
+            {CONTACT_EMAIL ? (
+              <TrackedLink
+                href={`mailto:${CONTACT_EMAIL}`}
+                event="Contact Click"
+                eventData={{ channel: "Email", location: "footer" }}
+                className="text-sm text-muted transition-colors hover:text-foreground"
+              >
+                Email
+              </TrackedLink>
+            ) : null}
             {visibleSocialLinks.map((link) => (
               <TrackedLink
                 key={link.label}
@@ -43,17 +53,7 @@ export function Footer() {
                 {link.label}
                 <span className="sr-only"> (opens in a new tab)</span>
               </TrackedLink>
-            ))}
-            {CONTACT_EMAIL ? (
-              <TrackedLink
-                href={`mailto:${CONTACT_EMAIL}`}
-                event="Contact Click"
-                eventData={{ channel: "Email", location: "footer" }}
-                className="text-sm text-muted transition-colors hover:text-foreground"
-              >
-                Email
-              </TrackedLink>
-            ) : null}
+            ))}           
           </div>
         )}
       </Container>

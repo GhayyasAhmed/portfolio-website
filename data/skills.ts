@@ -3,14 +3,6 @@ export type SkillCategory = {
   items: string[];
 };
 
-/**
- * Adjust this list so it precisely matches your real, hands-on experience —
- * it's scaffolding based on the stack described in the project brief
- * (frontend/React depth, full-stack via the DevWeekends Fellowship), not a
- * verified résumé. Categories are intentionally limited to what's actually
- * supported by that stack — don't add a category (e.g. testing/QA tooling)
- * until there's real experience with it to list.
- */
 export const SKILLS: SkillCategory[] = [
   {
     category: "Frontend",
@@ -19,20 +11,52 @@ export const SKILLS: SkillCategory[] = [
       "Next.js",
       "TypeScript",
       "JavaScript (ES6+)",
-      "Tailwind CSS",
+      "Vite",
       "HTML5 & CSS3",
+      "Tailwind CSS",
+      "Material UI",
     ],
   },
   {
     category: "State & Data",
-    items: ["REST APIs", "MongoDB", "PostgreSQL"],
+    items: [
+      "Redux Toolkit",
+      "RTK Query",
+      "REST APIs",
+      "API Integration",
+      "MongoDB",
+    ],
   },
   {
     category: "Backend",
-    items: ["Node.js", "Express"],
+    items: [
+      "Node.js",
+      "Express.js",
+      "Authentication & Authorization",
+      "Role-Based Access Control",
+      "Socket.IO",
+      "Stripe",
+    ],
   },
   {
-    category: "Infrastructure & Tools",
-    items: ["Git & GitHub", "npm", "Vercel", "VS Code", "Figma"],
+    category: "Testing & Quality",
+    items: [
+      "Playwright",
+      "React Testing Library",
+      "Accessibility",
+      "Web Performance",
+      "Security",
+    ],
+  },
+  {
+    category: "Deployment & Tools",
+    items: [
+      "Git & GitHub",
+      "Docker",
+      "AWS EC2",
+      "Nginx",
+      "GitHub Actions",
+      "Vercel",
+    ],
   },
 ];
