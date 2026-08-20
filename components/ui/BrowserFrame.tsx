@@ -45,7 +45,7 @@ export function BrowserFrame({ src, alt, label, className, framed = true }: Brow
         <span className="size-2.5 rounded-full bg-border-strong" />
         <span className="size-2.5 rounded-full bg-border-strong" />
         <span className="ml-3 flex-1 truncate rounded-md bg-background px-3 py-1 text-xs text-muted">
-          {label}
+          {label} 
         </span>
       </div>
 

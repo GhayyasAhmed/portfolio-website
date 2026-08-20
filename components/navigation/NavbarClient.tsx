@@ -75,7 +75,7 @@ export function NavbarClient() {
 
         <nav className="hidden items-center gap-1 md:flex" aria-label="Primary">
           {NAV_LINKS.map((link) => {
-            const id = link.href.replace("#", "");
+            const id = link.href.split("#")[1] ?? "";
             const isActive = activeSection === id;
             return (
               <a

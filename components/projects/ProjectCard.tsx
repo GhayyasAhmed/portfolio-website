@@ -17,6 +17,7 @@ export function ProjectCard({ project }: { project: Project }) {
         className="block focus-visible:outline-2 focus-visible:outline-accent"
       >
         <BrowserFrame
+          src={project?.imageUrl ?? ""}
           framed={false}
           label={project.title}
           alt={`Placeholder preview of the ${project.title} interface`}

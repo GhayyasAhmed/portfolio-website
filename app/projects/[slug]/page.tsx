@@ -6,7 +6,7 @@ import { BrowserFrame } from "@/components/ui/BrowserFrame";
 import { Container } from "@/components/ui/Container";
 import { PROJECTS, getProjectBySlug } from "@/data/projects";
 import { SITE_NAME } from "@/lib/constants";
-import { ArrowLeft, Code, ExternalLink } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -83,6 +83,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
         <div className="mt-8">
           <BrowserFrame
+            src={project?.imageUrl ?? ""}
             label={project.title}
             alt={`Placeholder preview of the ${project.title} interface — a real screenshot hasn't been added yet`}
           />
