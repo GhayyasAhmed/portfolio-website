@@ -26,7 +26,7 @@ export function ProjectCard({ project }: { project: Project }) {
 
       <div className="flex flex-1 flex-col p-6">
         <h3 className="text-lg font-semibold text-foreground">{project.title}</h3>
-        <p className="mt-2 text-sm text-muted">{project.summary}</p>
+        <p className="mt-2 text-sm text-muted text-justify">{project.summary}</p>
 
         <div className="mt-4 flex flex-wrap gap-2">
           {featuredTech.map((tech) => (

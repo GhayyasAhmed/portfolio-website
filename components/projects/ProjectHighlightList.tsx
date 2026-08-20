@@ -18,7 +18,7 @@ export function ProjectHighlightList({ items, limit, className }: ProjectHighlig
           <span aria-hidden="true" className="mt-0.5 text-accent">
             ›
           </span>
-          <span>{item}</span>
+          <span className="text-justify">{item}</span>
         </li>
       ))}
     </ul>
