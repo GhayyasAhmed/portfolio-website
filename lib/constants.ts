@@ -19,8 +19,7 @@ export const SITE_NAME = "Ghayyas Ahmed";
 
 export const SITE_ROLE = "Full-Stack Web Developer";
 
-export const SITE_DESCRIPTION =
-  "Portfolio of Ghayyas Ahmed, a full-stack web developer with a frontend/React background, building production-grade web applications with Next.js and TypeScript.";
+export const SITE_DESCRIPTION = "Portfolio of Ghayyas Ahmed, a full-stack web developer with a frontend/React background, building production-grade web applications with Next.js and TypeScript.";
 
 export type NavLink = {
   label: string;

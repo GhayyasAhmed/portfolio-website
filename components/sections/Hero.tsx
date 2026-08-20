@@ -22,7 +22,7 @@ export function Hero() {
           style={{ animationDelay: "80ms" }}
           className="animate-fade-up mt-4 max-w-3xl text-4xl font-semibold text-foreground sm:text-5xl md:text-5xl"
         >
-          Building fullstack products
+          Fullstack Web Developer
         </h1>
 
         <p
