@@ -1,15 +1,19 @@
-/**
- * Central site configuration.
- *
- * Anything marked TODO is intentionally left blank rather than invented —
- * fill these in with real values before deploying. Nothing here fabricates
- * a URL, handle, or number on your behalf.
- */
+function resolveSiteUrl(): string {
+  const explicit = process.env.NEXT_PUBLIC_SITE_URL;
+  console.log("process.env.NEXT_PUBLIC_SITE_URL", process.env.NEXT_PUBLIC_SITE_URL)
+  if (explicit) return explicit.replace(/\/$/, "");
 
-// TODO: set this to your real deployed domain (also set NEXT_PUBLIC_SITE_URL
-// in your deployment environment so metadata/OG/sitemap resolve correctly).
-export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ?? "http://localhost:3000";
+  // Vercel sets these automatically at build time — fall back to them
+  // instead of silently shipping "http://localhost:3000" in production.
+  const vercelHost = process.env.VERCEL_PROJECT_PRODUCTION_URL ?? process.env.VERCEL_URL;
+  console.log("process.env.VERCEL_PROJECT_PRODUCTION_URL", process.env.VERCEL_PROJECT_PRODUCTION_URL)
+  console.log("process.env.VERCEL_URL", process.env.VERCEL_URL)
+  if (vercelHost) return `https://${vercelHost}`;
+
+  return "http://localhost:3000";
+}
+
+export const SITE_URL = resolveSiteUrl();
 
 export const SITE_NAME = "Ghayyas Ahmed";
 
@@ -50,6 +54,6 @@ export const SOCIAL_LINKS: SocialLink[] = [
 
 /** TODO: add a real contact email. Left empty on purpose — see SOCIAL_LINKS. */
 export const CONTACT_EMAIL = "ghayyas1ahmed@gmail.com";
-export const WHATSAPP_LINK = "https://wa.me/+923700713489";
+export const WHATSAPP_LINK = "https://wa.me/923700713489";
 
 export const RESUME_PATH = "/Ghayyas_Ahmed_FullStack_Developer.pdf";
