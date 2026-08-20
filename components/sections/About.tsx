@@ -35,7 +35,7 @@ export function About() {
         <Reveal className="mt-10 flex flex-col items-center gap-8 text-center sm:flex-row sm:items-start sm:text-left">
           <div className="relative aspect-square w-40 shrink-0 overflow-hidden rounded-2xl border border-border sm:w-48">
             <Image
-              src="/dp1.png"
+              src="/profile.webp"
               alt="Ghayyas Ahmed"
               fill
               sizes="(max-width: 640px) 160px, 192px"

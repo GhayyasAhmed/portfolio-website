@@ -70,7 +70,7 @@ export const PROJECTS: Project[] = [
         items: ["Docker", "AWS EC2", "Nginx", "GitHub Actions CI/CD"],
       },
     ],
-    imageUrl: "/multi_vendor_ecommerce_app.png",
+    imageUrl: "/multi_vendor_ecommerce_app.webp",
     deployment:
       "Deployed to an AWS EC2 instance behind Nginx as a reverse proxy, with the app containerized using Docker for consistent environments. A GitHub Actions pipeline builds and deploys on push. This setup exists to get the product running end to end in production — the engineering focus of the project is the application and API layer, with infrastructure as supporting evidence of shipping it.",
     liveDemoUrl: "https://mercovia.vercel.app",
@@ -105,7 +105,7 @@ export const PROJECTS: Project[] = [
       { category: "Backend & Data", items: ["Node.js", "REST APIs"] },
       { category: "Auth & Payments", items: ["Authentication", "Social Authentication", "Stripe"] },
     ],
-    imageUrl: "/learning_management_system.png",
+    imageUrl: "/learning_management_system.webp",
     deployment:
       "Deployed on Vercel, which pairs naturally with the Next.js framework this project is built on — builds and previews ship automatically on push, and course pages are served from Vercel's edge network to keep load times low.",
     liveDemoUrl: "https://lms-lac-three.vercel.app",
@@ -135,7 +135,7 @@ export const PROJECTS: Project[] = [
       { category: "Frontend", items: ["React", "TypeScript", "Tailwind CSS"] },
       { category: "Backend", items: ["Node.js", "Express", "REST APIs"] },
     ],
-    imageUrl: "/hotel_booking_system.png",
+    imageUrl: "/hotel_booking_system.webp",
     deployment: "Deployed on Vercel, in line with the other projects in this portfolio.",
     liveDemoUrl: "https://hotel-booking-system-frontend-seven.vercel.app",
     githubUrl: "https://github.com/GhayyasAhmed/hotel-booking-system",
