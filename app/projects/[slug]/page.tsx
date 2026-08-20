@@ -89,7 +89,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         </div>
 
         <ProjectDetailSection title="Overview">
-          <p className="leading-relaxed text-muted">{project.overview}</p>
+          <p className="leading-relaxed text-muted text-justify">{project.overview}</p>
         </ProjectDetailSection>
 
         <ProjectDetailSection title="Key Features">
@@ -105,7 +105,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         </ProjectDetailSection>
 
         <ProjectDetailSection title="Deployment">
-          <p className="leading-relaxed text-muted">{project.deployment}</p>
+          <p className="leading-relaxed text-muted text-justify">{project.deployment}</p>
         </ProjectDetailSection>
 
         <ProjectDetailSection title="Live Demo">
@@ -113,7 +113,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             url={project.liveDemoUrl}
             label="View Live Demo"
             unavailableLabel="Live demo coming soon"
-            icon={ExternalLink}
+            // icon={ExternalLink}
+            iconName="external"
             variant="primary"
           />
         </ProjectDetailSection>
@@ -123,7 +124,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             url={project.githubUrl}
             label="View Source on GitHub"
             unavailableLabel="Repository link coming soon"
-            icon={Code}
+            iconName="code"
             variant="secondary"
           />
         </ProjectDetailSection>

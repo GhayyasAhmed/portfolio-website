@@ -1,17 +1,22 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import Link from "next/link";
-import { Menu, X, FileDown } from "lucide-react";
-import { NAV_LINKS, SECTION_IDS, SITE_NAME, RESUME_PATH } from "@/lib/constants";
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
+import {
+  NAV_LINKS,
+  SECTION_IDS,
+  SITE_NAME
+} from "@/lib/constants";
 import { cn } from "@/lib/utils";
+import { Menu, X } from "lucide-react";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 
-type NavbarClientProps = {
-  hasResume: boolean;
-};
+// type NavbarClientProps = {
+//   hasResume: boolean;
+// };
 
-export function NavbarClient({ hasResume }: NavbarClientProps) {
+// export function NavbarClient({ hasResume }: NavbarClientProps) {
+export function NavbarClient() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState<string | null>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -29,9 +34,9 @@ export function NavbarClient({ hasResume }: NavbarClientProps) {
   // Active-section indicator: highlight the nav link for the section
   // currently most visible in the viewport and close mobile menu.
   useEffect(() => {
-    const sections = SECTION_IDS.map((id) => document.getElementById(id)).filter(
-      (el): el is HTMLElement => el !== null,
-    );
+    const sections = SECTION_IDS.map((id) =>
+      document.getElementById(id),
+    ).filter((el): el is HTMLElement => el !== null);
     if (sections.length === 0) return;
 
     const observer = new IntersectionObserver(
@@ -61,7 +66,10 @@ export function NavbarClient({ hasResume }: NavbarClientProps) {
       )}
     >
       <div className="mx-auto flex h-16 w-full max-w-content items-center justify-between px-6 sm:px-8">
-        <Link href="/" className="font-display text-base font-semibold text-foreground">
+        <Link
+          href="/"
+          className="font-display text-base font-semibold text-foreground"
+        >
           {SITE_NAME}
         </Link>
 
@@ -107,15 +115,21 @@ export function NavbarClient({ hasResume }: NavbarClientProps) {
             onClick={() => setIsMenuOpen((open) => !open)}
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={isMenuOpen}
+            aria-controls="mobile-nav"
             className="inline-flex size-9 items-center justify-center rounded-lg border border-border text-foreground"
           >
-            {isMenuOpen ? <X className="size-4" /> : <Menu className="size-4" />}
+            {isMenuOpen ? (
+              <X className="size-4" />
+            ) : (
+              <Menu className="size-4" />
+            )}
           </button>
         </div>
       </div>
 
       {isMenuOpen ? (
         <nav
+          id="mobile-nav"
           aria-label="Mobile"
           className="border-t border-border bg-background px-6 py-4 md:hidden"
         >

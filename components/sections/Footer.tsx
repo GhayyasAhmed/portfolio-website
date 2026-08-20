@@ -1,6 +1,6 @@
+import { TrackedLink } from "@/components/analytics/TrackedLink";
 import { Container } from "@/components/ui/Container";
 import { CONTACT_EMAIL, SITE_NAME, SOCIAL_LINKS } from "@/lib/constants";
-import Link from "next/link";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -31,23 +31,28 @@ export function Footer() {
         {(visibleSocialLinks.length > 0 || CONTACT_EMAIL) && (
           <div className="flex flex-wrap gap-x-6 gap-y-2">
             {visibleSocialLinks.map((link) => (
-              <Link
+              <TrackedLink
                 key={link.label}
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
+                event="Social Click"
+                eventData={{ channel: link.label, location: "footer" }}
                 className="text-sm text-muted transition-colors hover:text-foreground"
               >
                 {link.label}
-              </Link>
+                <span className="sr-only"> (opens in a new tab)</span>
+              </TrackedLink>
             ))}
             {CONTACT_EMAIL ? (
-              <a
+              <TrackedLink
                 href={`mailto:${CONTACT_EMAIL}`}
+                event="Contact Click"
+                eventData={{ channel: "Email", location: "footer" }}
                 className="text-sm text-muted transition-colors hover:text-foreground"
               >
                 Email
-              </a>
+              </TrackedLink>
             ) : null}
           </div>
         )}

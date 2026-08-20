@@ -1,15 +1,21 @@
-import { SKILLS } from "@/data/skills";
-import { Container } from "@/components/ui/Container";
-import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Badge } from "@/components/ui/Badge";
+import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { SKILLS } from "@/data/skills";
 
 export function Skills() {
   return (
-    <section id="skills" className="scroll-mt-16 py-24">
+    <section
+      id="skills"
+      aria-labelledby="skills-heading"
+      className="scroll-mt-16 py-24"
+    >
       <Container>
-        <SectionHeading kicker="Skills" 
-        // title="Tools I reach for." 
+        <SectionHeading
+          headingId="skills-heading"
+          kicker="Skills"
+          // title="Tools I reach for."
         />
 
         <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">

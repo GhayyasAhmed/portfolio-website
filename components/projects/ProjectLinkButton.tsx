@@ -1,17 +1,15 @@
+"use client";
+import { track } from "@vercel/analytics";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { ExternalLink, Code } from "lucide-react";
 
 type ProjectLinkButtonProps = {
-  /** `null` when the URL isn't available yet — this component never fabricates one. */
   url: string | null;
   label: string;
   unavailableLabel: string;
-  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
-  /**
-   * "primary" / "secondary" render full ButtonLinks (detail page).
-   * "inline" renders a compact text link (project card).
-   */
+  iconName: "external" | "code";
   variant?: "primary" | "secondary" | "inline";
 };
 
@@ -19,15 +17,22 @@ export function ProjectLinkButton({
   url,
   label,
   unavailableLabel,
-  icon: Icon,
+  iconName,
   variant = "primary",
 }: ProjectLinkButtonProps) {
+  const Icon = iconName === "external" ? ExternalLink : Code;
+
+  function handleClick() {
+    if (url) track("Project Link Click", { label, url });
+  }
+
   if (variant === "inline") {
     return url ? (
       <Link
         href={url}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={handleClick}
         className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground transition-colors hover:text-accent"
       >
         <Icon className="size-4" aria-hidden="true" />
@@ -44,7 +49,7 @@ export function ProjectLinkButton({
 
   if (url) {
     return (
-      <ButtonLink href={url} target="_blank" variant={variant}>
+      <ButtonLink href={url} target="_blank" variant={variant} onClick={handleClick}>
         <Icon className="size-4" aria-hidden="true" />
         {label}
         <span className="sr-only"> (opens in a new tab)</span>

@@ -1,4 +1,4 @@
-import { hasResumeFile } from "@/lib/Resume";
+// import { hasResumeFile } from "@/lib/Resume";
 import { NavbarClient } from "./NavbarClient";
 
 /**
@@ -8,5 +8,6 @@ import { NavbarClient } from "./NavbarClient";
  * NavbarClient.
  */
 export function Navbar() {
-  return <NavbarClient hasResume={hasResumeFile()} />;
+  // return <NavbarClient hasResume={hasResumeFile()} />;
+  return <NavbarClient />;
 }

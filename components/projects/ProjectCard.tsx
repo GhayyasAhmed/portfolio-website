@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight, ExternalLink, Code } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import type { Project } from "@/data/projects";
 import { Badge } from "@/components/ui/Badge";
 import { BrowserFrame } from "@/components/ui/BrowserFrame";
@@ -52,7 +52,7 @@ export function ProjectCard({ project }: { project: Project }) {
             url={project.liveDemoUrl}
             label="Live Demo"
             unavailableLabel="Live Demo — soon"
-            icon={ExternalLink}
+            iconName="external"
             variant="inline"
           />
 
@@ -60,7 +60,7 @@ export function ProjectCard({ project }: { project: Project }) {
             url={project.githubUrl}
             label="GitHub"
             unavailableLabel="GitHub — soon"
-            icon={Code}
+            iconName="code"
             variant="inline"
           />
         </div>

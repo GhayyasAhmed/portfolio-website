@@ -9,6 +9,7 @@ type ButtonLinkProps = {
   target?: string;
   rel?: string;
   "aria-disabled"?: boolean;
+  onClick?: React.MouseEventHandler<HTMLAnchorElement>;
 };
 
 const base =

@@ -1,7 +1,7 @@
-import Image from "next/image";
 import { Container } from "@/components/ui/Container";
-import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import Image from "next/image";
 
 const PILLARS = [
   {
@@ -23,9 +23,10 @@ const PILLARS = [
 
 export function About() {
   return (
-    <section id="about" className="scroll-mt-16 py-24">
+    <section id="about" aria-labelledby="about-heading"  className="scroll-mt-16 py-24">
       <Container>
         <SectionHeading
+          headingId="about-heading"
           kicker="About"
           title="Frontend-first, full-stack capable."
           description="A short summary of how I work and what I bring to a team — not a full biography."
@@ -39,7 +40,7 @@ export function About() {
               fill
               sizes="(max-width: 640px) 160px, 192px"
               className="object-cover"
-              priority
+              // priority
             />
           </div>
           <p className="max-w-2xl text-base leading-relaxed text-muted sm:text-lg text-justify">

@@ -1,14 +1,15 @@
-import { PROJECTS } from "@/data/projects";
-import { Container } from "@/components/ui/Container";
-import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Reveal } from "@/components/ui/Reveal";
 import { ProjectCard } from "@/components/projects/ProjectCard";
+import { Container } from "@/components/ui/Container";
+import { Reveal } from "@/components/ui/Reveal";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { PROJECTS } from "@/data/projects";
 
 export function Projects() {
   return (
-    <section id="projects" className="scroll-mt-16 py-24">
+    <section id="projects" aria-labelledby="projects-heading" className="scroll-mt-16 py-24">
       <Container>
         <SectionHeading
+        headingId="projects-heading"
           kicker="Projects"
           // title="Selected work."
           // description="Full-stack builds from the DevWeekends Fellowship. Detailed case studies are on the way."

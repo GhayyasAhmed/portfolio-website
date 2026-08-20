@@ -3,6 +3,7 @@ import { Container } from "@/components/ui/Container";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { SITE_NAME, RESUME_PATH } from "@/lib/constants";
 import { hasResumeFile } from "@/lib/Resume";
+import { TrackedButtonLink } from "@/components/analytics/TrackedButtonLink";
 
 export function Hero() {
   const hasResume = hasResumeFile();
@@ -28,8 +29,9 @@ export function Hero() {
           style={{ animationDelay: "160ms" }}
           className="animate-fade-up mt-6 max-w-xl text-base text-muted sm:text-lg text-justify"
         >
-          ~4 years building production React interfaces, now shipping complete full-stack
-          applications from database to deploy through the DevWeekends Fellowship.
+          ~4 years building production React interfaces, now shipping complete
+          full-stack applications from database to deploy through the
+          DevWeekends Fellowship.
         </p>
 
         <div
@@ -41,10 +43,15 @@ export function Hero() {
             <ArrowRight className="size-4" aria-hidden="true" />
           </ButtonLink>
           {hasResume ? (
-            <ButtonLink href={RESUME_PATH} variant="primary" target="_blank">
+            <TrackedButtonLink
+              href={RESUME_PATH}
+              variant="primary"
+              target="_blank"
+              event="Resume Download"
+            >
               <FileDown className="size-4" aria-hidden="true" />
               Download Resume
-            </ButtonLink>
+            </TrackedButtonLink>
           ) : (
             <ButtonLink href="#contact" variant="secondary">
               Get in Touch
