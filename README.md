@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio Website
 
-## Getting Started
+A modern, high-performance portfolio website built to showcase frontend depth, full-stack range, and production-grade engineering standards.
 
-First, run the development server:
+🔗 **Live Preview:** https://ghayyasahmed.vercel.app/
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## 🚀 Tech Stack
+
+* **Framework:** [Next.js](https://nextjs.org/) (App Router, React)
+* **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+* **Icons:** [Lucide React](https://lucide.dev/)
+* **Analytics:** Vercel Analytics
+* **Deployment:** Vercel
+
+---
+
+## ✨ Features
+
+* **Responsive Design:** Fully optimized across mobile, tablet, and desktop viewports.
+* **Dynamic Content Sections:** Structured project showcases with tech stack filtering and engineering highlights.
+* **Interactive Navigation:** Sticky header with active-section intersection observation and mobile drawer mechanics.
+* **SEO Optimized:** Built-in metadata, OpenGraph tags, and structured JSON-LD data.
+* **Accessibility (a11y):** Semantic HTML landmarks, skip links, and screen-reader-friendly attributes.
+
+---
+
+## 🛠️ Getting Started
+
+Follow these steps to run the project locally on your machine.
+
+### Prerequisites
+
+Ensure you have **Node.js** (v18+ recommended) and **npm** installed.
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/GhayyasAhmed/portfolio-website.git](https://github.com/GhayyasAhmed/portfolio-website.git)
+   cd portfolio-website
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Install dependencies:**
+```bash
+npm install
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+3. **Run the development server:**
+```bash
+npm run dev
 
-To learn more about Next.js, take a look at the following resources:
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📦 Build & Production
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+To build the project for production:
+
+```bash
+npm run build
+npm run start
+
+```
+
+---
+
+## 📄 License
+
+This project is open-source and available under the [MIT License](https://www.google.com/search?q=LICENSE).
+
+```
