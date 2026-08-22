@@ -1,9 +1,8 @@
-```markdown
 # Portfolio Website
 
 A modern, high-performance portfolio website built to showcase frontend depth, full-stack range, and production-grade engineering standards.
 
-🔗 **Live Preview:** (https://ghayyasahmed.vercel.app/)
+🔗 **Live Preview:** https://ghayyasahmed.vercel.app/
 
 ---
 
@@ -77,7 +76,5 @@ npm run start
 ## 📄 License
 
 This project is open-source and available under the [MIT License](https://www.google.com/search?q=LICENSE).
-
-```
 
 ```
