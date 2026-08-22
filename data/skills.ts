@@ -17,6 +17,7 @@ export const SKILLS: SkillCategory[] = [
       "Material UI",
     ],
   },
+
   {
     category: "State & Data",
     items: [
@@ -25,8 +26,10 @@ export const SKILLS: SkillCategory[] = [
       "REST APIs",
       "API Integration",
       "MongoDB",
+      "Redis",
     ],
   },
+
   {
     category: "Backend",
     items: [
@@ -38,6 +41,7 @@ export const SKILLS: SkillCategory[] = [
       "Stripe",
     ],
   },
+
   {
     category: "Testing & Quality",
     items: [
@@ -48,14 +52,27 @@ export const SKILLS: SkillCategory[] = [
       "Security",
     ],
   },
+
   {
-    category: "Deployment & Tools",
+    category: "Cloud & DevOps",
     items: [
-      "Git & GitHub",
       "Docker",
+      "Docker Compose",
       "AWS EC2",
       "Nginx",
       "GitHub Actions",
+      "CI/CD",
+      "DNS",
+      "HTTPS / TLS",
+      "Let's Encrypt",
+      "Certbot",
+    ],
+  },
+
+  {
+    category: "Tools & Platforms",
+    items: [
+      "Git & GitHub",
       "Vercel",
     ],
   },

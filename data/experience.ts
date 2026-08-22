@@ -12,7 +12,7 @@ export const EXPERIENCE: ExperienceEntry[] = [
     id: "kachyng",
     role: "Front-End Engineer",
     organization: "Kachyng Inc",
-    period: "Feb 2024 – Feb 2026",
+    period: "Feb 2024 – Present",
     summary:
       "Built and optimized production React and TypeScript payment workflows, improving checkout performance, reducing frontend bundle size, refactoring complex modules into reusable components, strengthening API type contracts, and adding Playwright E2E coverage for critical payment flows.",
   },
